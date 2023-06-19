@@ -1,0 +1,21 @@
+class Solution:
+    def run(self, a):
+        if not a:
+            return None
+
+        max_sum = float('-inf')  # Initialize max_sum with negative infinity
+        current_sum = 0  # Initialize current_sum to 0
+
+        for num in a:  # Iterate through each element in the array
+            current_sum += num  # Add the current element to the current_sum
+
+            # If the current_sum becomes less than the current element,
+            # reset the current_sum to the current element
+            if current_sum < num:
+                current_sum = num
+
+            # If the current_sum is greater than the max_sum, update the max_sum
+            if current_sum > max_sum:
+                max_sum = current_sum
+
+        return max_sum
